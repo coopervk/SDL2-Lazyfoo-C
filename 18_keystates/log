@@ -1,0 +1,13 @@
+keys.c: In function ‘main’:
+keys.c:195:15: warning: passing argument 1 of ‘LT_render’ from incompatible pointer type [-Wincompatible-pointer-types]
+     LT_render(&(currentTexture->mTexture), 0, 0, NULL, 0.0, NULL, SDL_FLIP_NONE);
+               ^
+keys.c:77:6: note: expected ‘struct LTexture *’ but argument is of type ‘SDL_Texture ** {aka struct SDL_Texture **}’
+ void LT_render(struct LTexture *texture, int x, int y, SDL_Rect* clip, double angle, SDL_Point* center, SDL_RendererFlip flip) {
+      ^~~~~~~~~
+keys.c:196:23: error: ‘grenderer’ undeclared (first use in this function); did you mean ‘gRenderer’?
+     SDL_RenderPresent(grenderer);
+                       ^~~~~~~~~
+                       gRenderer
+keys.c:196:23: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [makefile:19: all] Error 1
